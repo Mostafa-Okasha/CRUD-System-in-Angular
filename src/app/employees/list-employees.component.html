@@ -1,0 +1,12 @@
+    <!--
+            <button type="button"class="btn btn-primary" (click)="editEmployee()">Edit</button>
+            <button type="button"class="btn btn-danger margin_left" (click)="deleteEmployees()">Delete</button>
+            -->
+<div class="form-group">
+  <input type="text" class="form-control w-50 m-auto" placeholder="Search By Name" [(ngModel)]="searchTerm">
+</div>
+<div *ngFor="let employee of employees |filter:searchTerm" class="pointerCursor">
+    <div (click)='onclick(employee.id)'>
+        <app-display-employee [employee]="employee"></app-display-employee>
+    </div>
+</div>
